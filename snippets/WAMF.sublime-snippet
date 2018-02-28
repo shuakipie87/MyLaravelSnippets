@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+
+		 wp_nav_menu (array(
+
+			'theme_location' => 'footer',
+			'container'      => 'nav',
+			'menu_class'     => 'list-unstyled list-inline'
+
+                            
+
+			));
+
+		?>		
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wamf</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

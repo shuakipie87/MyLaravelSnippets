@@ -1,0 +1,301 @@
+// Blog Site Title on Admin
+<?php 
+ bloginfo('name');
+
+?>
+
+// Tagline on Admin
+
+<?php bloginfo ('description'); ?>
+
+// Create Custom Fields
+// the number 9 is equal to the number ID on the page.      
+$prelaunce_price 		= get_post_meta( 9, 'prelaunch_price', true);
+
+
+//Display the custom fields
+<?php echo $prelaunch_price;?>
+
+
+//Plugins Advanced Custom Fields.
+
+$income_feature_image = get_field('íncome_feautre_image');
+$income_section_title = get_field('income_section_title');
+
+//Display Advanced Custom Fields.
+
+<?php echo $income_feature_image; ?>
+
+<!-- If user uploaded an image -->
+
+<?php if(!empty($income_feature_image)): ?>
+
+// Display Image on Advanced Custom Fields.
+<img src ="<?php echo $income_feature_image['url']; ?>" alt ="<?php echo $income_feature_image['alt'];?>">
+  
+<php endif;?>
+
+
+//Custom Post Type UI
+
+//Query Custom Post type
+
+<?php  $loop = new Wp_Query( arry('post_type' => 'course_feauture', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+//the_field display specific functions
+<?php while ($loop->have_posts() ): $loop->the_post(); ?>
+<i class ="<?php the_field('course_feature_icon'); ?>"></i>
+<h4> <?php the_title(); ?> </h4>
+<?php endwhile;  wp_reset_query();?>
+
+//Add Project Feauteures Custom Post Type UI and Advance Custom Fields.
+
+//Enable Functions  add_theme_support('post-thumbnails');
+
+<?php while ($loop->have_posts() ): $loop->the_post(); ?>
+
+<?php 
+	if ( has_post_thumbnail() ) {
+          the_post_thumbnail(); 
+      }
+
+?>
+
+<h1><?php the_title(); ?></h1>
+<p><php the_content(); ?></p>
+
+<?php endwhile; wp_reset_query(); ?>
+
+// TcCode The instruction Section on Advance Custom Fields.
+
+$instructor_section_title = get_field('instructor_title');
+
+<?php if(!empty($income_feature_image)): ?>
+
+<a href ="https://twitter.com/<?php echo $twitter_username; ?>" target ="_blank" class ="badge social twitter"><i class ="fa fa-twitter"></i></a>
+
+<a href ="https://facebook.com/<?php echo $facebook_username; ?>" target ="_blank" class ="badge social facebook"><i class ="fa fa-facebook"></i></a>
+
+<?php endif;  ?>
+
+
+// Testimonials with Custom Post UI
+
+
+
+<?php  $loop = new Wp_Query( arry('post_type' => 'testimonial', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+//the_field display specific functions
+<?php while ($loop->have_posts() ): $loop->the_post(); ?>
+
+//crop image thumbnail.
+<?php if (has_post_thumbnail()){
+	     the_post_thumbnail(array (200, 200));
+	  
+	     }
+
+<?php endwhile; wp_reset_query(); ?>
+
+
+// Cleaning the template using get_template_part();
+
+get_template_part( 'template-parts/content', 'page' );
+
+//Feature Image and Fall Back Image
+
+<?php 
+
+get_header();
+get_footer();
+?>
+
+$thumbnail_url = wp_get_attachement_url( get_post_thumbnail_id ($post->ID));
+
+<section class ="feature-image" style ="background: url('<?php echo $thumbnail_url; ?>') no-repeat; background-size: cover;" data-type ="background" data-speed = "2">
+<h1><?php the_title(); ?> </h1>
+
+
+// Add Resources on Custom Post UI
+
+<?php while (have_posts() ) : the_posts(); ?>
+
+<?php the_content(); ?>
+
+<?php endwhile; ?>
+
+
+<?php if ( !empty($button_text) ) : ?>
+<a href ="<?php echo $resource_url; ?>"><?php echp $button_text; ?></a>
+<?php endif; ?>
+
+<img src ="<?php echo $resource_image[url];" alt = "<?php echo $resource_image[alt]; " ?> ">
+
+
+// Custom Blog.index Page
+
+content.php for blog page.
+
+
+<?php the_author(); ?>
+<?php the_date();  ?>
+<?php the_category (' ,'); ?>
+<?php the_tags(); ?>
+<?php comments_number(0, 1, '%'); ?>
+<?php edit_post_link ('Edit' , '<div> <i class = "fa fa-pencil"></i>', '</div>' ); ?>
+// if posthumbnail is display
+<?php if ( has_post_thumbnail ()){ ?>	
+<div classs ="post-image">
+<?php the_post_thumbnail(); ?>
+</div>
+<?php } ?>
+
+
+// Display Post excerpt.
+
+
+// Display Post excerpt.
+
+
+function new_excerpt_more ($more){
+			global $post;
+			return '... <a classs ="moretag" href ="' . get_premalink ($post->ID) . '"> continue reading </a>
+
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+function new_excerpt_more ($more){
+			global $post;
+			return '... <a classs ="moretag" href ="' . get_premalink ($post->ID) . '"> continue reading </a>
+
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+//Display Single Post on single.php
+
+
+//Display search.php
+// Best Comment.
+<!-- #primary -->
+<!-- .primary -->
+
+function custom_theme_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'custom-theme' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'custom-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+}
+add_action( 'widgets_init', 'custom_theme_widgets_init' );
+
+
+//Styling the Comments Section
+
+//Fixing Archieve Template on archieve.php
+
+//Create a contact page.
+
+[text* your-name class:form-control class:input-lg id:contact-name placeholder "Your Name"]
+[email* your-email class:form-control class:input-lg id:contact-email placeholder "Your Email"]
+[text* your-subject class:form-control class:input-lg id:contact-subject placeholder "Your Subject"]
+[textarea* your-message class:form-control clas:input-lg id:contact-message x3 placeholder "Your Message"]
+
+// Adding Custom SideBar * Widgets
+
+function custom_theme_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'custom-theme' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'custom-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+		register_sidebar( array(
+		'name'          => esc_html__( 'New Sidebar', 'custom-theme' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'custom-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'custom_theme_widgets_init' );
+
+//Display the sidebar
+
+<?php dynamic_sidebar('sidebar-2'); ?>
+
+// Display footer Date
+
+&copy; <?php date('Y'); ?> Brad Hussey </p>
+
+
+//Custom Menus
+
+register_nav_menus( array(
+			'menu-1' => esc_html__( 'Primary', 'custom-theme' ),
+			'menu-2' => esc_html__( 'Footer', 'custom-theme' ),
+
+		) );
+
+//Header
+
+<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					 'container'	 => 'nav',
+					 'container_id'        => 'main-menu',
+					 'container_class' => 'menu collapse navbar-collapse pull-left',
+					 'menu_class'      =>  'nav navbar-nav'
+				) );
+			?>
+
+// Footer
+
+		<?php wp_nav_menu (array(
+
+			'theme_location' => 'footer',
+			'container'      => 'nav',
+			'menu_class'     => 'list-unstyled list-inline'
+
+                            
+
+			));
+
+		?>		
+
+// Create a useful & engaging 404
+
+//Display widget categories
+
+<?php wp_list_categories( array(
+             'orderby' => 'count',
+             'order'   => 'DESC',
+             'show_count' => 1,
+             'title_li'   => '',
+            'number'  => 10
+
+));
+
+?>
+//Display Widget Archieve
+<?php  the_widget ('WP_Widget_Archieves', 'title=Our Archives', 'before_title=<h4 class ="widgettitle">&after_title=</h4>'); ?>
+
+//Login Logo Plugin
+
+//add Stylesheet
+<?php bloginfo('stylesheet_directory'); ?>
+
+
+<!--[if lt IE 9]>$
+	<script src="<?php bloginfo('template_directory'); ?>/cs/js.js" type="text/javascript"></script>
+<![endif]-->

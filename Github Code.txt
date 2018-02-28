@@ -1,0 +1,53 @@
+<!-- Add a  file -->
+echo "Hello World" > index.txt
+<!-- Remove Representation -->
+rm -rf .git
+<!-- Add commit text -->
+git add index.txt
+<!-- Save comment  -->
+git commit 'First Comment'
+<!-- Display the commit-->
+git log
+<!-- Diffirentiate 2 Commit-->
+diff --git a/index.txt b/index.txt
+<!-- all all files on commit-->
+git add .
+<!-- Display the commit-->
+git reset --hard 
+git reset --soft
+<!-- Display the commit-->
+git commit  --amend
+:wq <!-- to save and quit -->
+<!-- git checkout -- <file>->
+reset the commit
+<!-- Add checkout branch-->
+git checkout -b feauture-reporting
+<!-- swtich to the branch->
+git checkout feature-reporting
+<!-- check status-->
+git status
+<!-- Merge branch to master branch-->
+git merge feauture-reporting
+<!-- delete the branch-->
+git branch -d feature-reporting
+<!-- Merge conflict-->
+<!--use aliaces-->
+git config --global alias.s status
+<!-- Stash Away Changes -->
+git stash
+git stash list - display list stash
+git stash apply - make changes on stash
+
+<!-- Push to github -->
+git remote add origin https://github.com/joemyams/newlandingpages.git
+
+<!-- Push to github using clone -->
+git push
+<!-- Rebasing -->
+git rebase
+mkdir git-rebasing
+cd git-rebasing
+git init	
+
+<!-- Rebase Master -->
+git rebase -i master

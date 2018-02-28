@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+
+
+public function ${1:show_view}()
+    {
+        //
+        return view('${2:contact}');
+    }
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>ps</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

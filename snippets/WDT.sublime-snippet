@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+ while (${1:}loop->have_posts() ): ${2:}loop->the_post(); ?>
+
+<?php 
+	if ( has_post_thumbnail() ) {
+          the_post_thumbnail(); 
+      }
+
+?>
+
+
+<h1><?php the_title(); ?></h1>
+<p><php the_content(); ?></p>
+
+<?php endwhile; wp_reset_query(); ?>
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wdt</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

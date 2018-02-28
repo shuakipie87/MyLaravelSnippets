@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+
+<div class="container">
+        	<div class ="content">
+        		<h1>Contact Us</h1>
+        	</div>	
+        </div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>d1</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope> 
+</snippet> 

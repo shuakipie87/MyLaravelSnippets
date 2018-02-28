@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+        {!! Form::model(${1:dollarsign}post, ['method'=> 'DELETE', 'action' => ['PostController@destroy', ${1:dollarsign}post->id]]) !!}
+   		
+ 		{{csrf_field()}}
+         <div class="form-group">
+         		
+         			{!! Form::submit('DELETE POST', ['class' => 'btn btn-danger']) !!}
+ 		 
+ 		 </div>
+
+ 		{!! Form::close() !!}
+ 		${0:}
+
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fdelete</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.blade</scope>
+</snippet>

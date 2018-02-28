@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+   // Eloquent update data
+
+           Route::get('/update', function () {
+           	
+    		 Post::where('id', 4)->where ('is_admin', 0)->update(['title'=> 'New JOSHUA TITLE', 'content' => 'The Best Programmer on the World']);
+         
+   
+      });
+     
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>reloquentupdate</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

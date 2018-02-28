@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+if(!empty(${1:}income_feature_image)): ?>
+
+// Display Image on Advanced Custom Fields.
+<img src ="<?php echo ${2:}income_feature_image['url']; ?>" alt ="<?php echo ${3:}income_feature_image['alt'];?>">
+  
+<?php endif;?>
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wiid</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

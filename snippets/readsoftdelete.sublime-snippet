@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+      	//Read Soft Detete to trash Eloquent
+ 	
+ 		 Route::get('/readsoftdelete', function () {
+                      
+                ${1:dollarsign}post =  Post::withTrashed()->where('id', 1)->get();
+
+                return ${1:dollarsign}post;  	
+                     
+                	      
+                  });${0:}
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>reloquentreadsoftdelete</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

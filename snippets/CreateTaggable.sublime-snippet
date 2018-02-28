@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+   
+  //Create Post Tag
+   ${1:dollarsign}post = Post::create(['name' => 'This is the new Post']);
+   ${1:dollarsign}tag1 = Tag::find(1);
+   ${1:dollarsign}post->tags()->save( ${1:dollarsign}tag1); 
+
+  //Create Video Tag
+  
+   ${1:dollarsign}video = Video::create(['name' => 'name.mov']);
+ 
+   ${1:dollarsign}tag2 = Tag::find(2);
+  
+   ${1:dollarsign}video->tags()->save( ${1:dollarsign}tag2);  
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>CreateTaggable</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+
+    Route::get('/findmore', function () {
+     
+  		 ${1:dollarsign}posts = Post::findorfail(4);
+
+  		return  ${1:dollarsign}posts;
+
+        // $posts = Post::where('users_count', '<', 50)->firstorfail();
+
+        // return $posts;
+
+
+  });${0:}	
+  
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>reloquentfind</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

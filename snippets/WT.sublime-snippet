@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+function custom_theme_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'custom-theme' ),
+		'id'            => '${1:sidebar-1}',
+		'description'   => esc_html__( 'Add widgets here.', 'custom-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+}
+add_action( 'widgets_init', 'custom_theme_widgets_init' );
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wcs</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

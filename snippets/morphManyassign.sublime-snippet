@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+   ${1:dollarsign}staff = Staff::findorfail(1);
+   ${1:dollarsign}photo = Photo::findorfail(1);
+   ${1:dollarsign}staff->photos()->save(${1:dollarsign}photo);
+   {0:}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>morphManyassign</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

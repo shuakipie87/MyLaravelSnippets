@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+
+	    wp_list_categories( array(
+             'orderby' => 'count',
+             'order'   => 'DESC',
+             'show_count' => 1,
+             'title_li'   => '',
+            'number'  => 10
+		));
+
+?>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wdlc</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+
+Route::get('/user/pivot', function () {
+    
+    ${1:sign}user = User::find(1);
+
+       
+        foreach(${1:sign}user->roles as ${1:sign}role)
+        {
+           // return  ${1:sign}role->pivot;
+        	echo ${1:sign}role->pivot->created_at;
+        }
+    
+    
+    
+});	
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>RUP</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

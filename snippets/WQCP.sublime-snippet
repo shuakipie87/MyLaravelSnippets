@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+${1:}loop = new Wp_Query( arry('post_type' => '${2:name_post_type}', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+
+//the_field display specific functions
+
+<?php while (${3:}loop->have_posts() ): ${4:}loop->the_post(); ?>
+
+<i class ="<?php the_field('course_feature_icon'); ?>"></i>
+
+<h4> <?php the_title(); ?> </h4>
+
+<?php endwhile;  wp_reset_query();?>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wqcp</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

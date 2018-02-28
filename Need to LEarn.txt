@@ -1,0 +1,14 @@
+ 1. VueJS, NodeJS, MySQL and Docker
+ 2. NodeJS (Koa, Express, AdonisJS)
+ 3. A frontend framework (React, Angular, VueJS, insert_your_favourite)
+ 4. Laravel
+ 5. PHP
+
+
+
+Are you looking to work with a cutting edge travel tech startup? We are seeking a talented full stack developer who has experience in VueJS, NodeJS, MySQL and Docker.
+
+Before applying please make sure you have experience with:
+* A frontend framework (React, Angular, VueJS, insert_your_favourite)
+* NodeJS (Koa, Express, AdonisJS)
+* MySQL

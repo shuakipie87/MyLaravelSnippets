@@ -1,0 +1,118 @@
+<!-- Creating Tables -->
+php artisan make:migration create_posts_tabe --create ="posts"
+<!-- Delete last migration -->
+php artisan migrate:rollback
+<!-- Migrate all the tables-->
+php artisan migrate
+<!-- Adding column on Tables -->
+php artisan make:migration add_is_admin_column_to_posts_tables --table="posts"
+<!-- Reset all tables Migration-->
+php artisan migrate:reset
+<!-- Display the status Migration-->
+php artisan migrate:status
+<!-- PHP Artisan Route List -->
+php artisan route:list
+<!-- PHP artisan Create Controller -->
+php artisan make:controller PostController
+<!-- PHP artisan Create CRUD Controller -->
+php artisan make:controller --resource PostController
+<!-- PHP artisan Create Model -->
+php artisan make:model Post
+
+//Create Database on Vagrant
+Vagrant ssh
+mysql
+create user 'dendi'@'localhost' IDENTIFIED BY 'dendi';
+create database vvvdatabase;
+grant all on vvvdatabase.*to 'dendi'@'localhost';
+FLUSH PRIVILEGES;
+exit
+//Create form Collective
+https://laravelcollective.com/docs/5.2/html
+composer update
+
+//Make Request Post
+php artisan make:request CreatePostRequest
+
+//Sage Theme
+https://roots.io/sage/docs/theme-installation/
+//Vagrant
+vagrant up
+vagrant up --provision
+
+//Upgrade
+sudo do-release-upgrade
+
+//Create new folder Sites
+
+<VirtualHost *:80>
+        DocumentRoot /srv/www/vvvsage
+        ServerName vvvsage.com
+</VirtualHost>
+
+sudo service nginx reload
+sudo service nginx restart
+PHP-FPM should be reloaded/restarted if any config changes in /etc/php5/fpm are made.
+
+sudo service php5-fpm reload
+sudo service php5-fpm restart
+
+Create file
+sudom vim index.php
+
+
+//create apache2
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install apache2 -y
+
+//install php 7
+sudo apt-get install php7.1
+php -v
+//install mysql
+sudo apt-get install mysql-server php7.1-mysql
+sudo mysql_secure_installation
+sudo nano /etc/mysql/my.cnf
+# skip-external-locking
+# bind-address 0.0.0.0
+sudo service apache2 restart
+sudo service mysql restart
+
+sites:
+  wordpress-default:
+    repo: https://github.com/Varying-Vagrant-Vagrants/vvv-wordpress-default.git
+    vm_dir: /srv/www/wordpress-default
+    local_dir: /Users/janesmith/dev/www/vvv/www/wordpress-default
+    C:\Users\JoemYams\vagrant-local\www\vvvsage
+    branch: master
+    skip_provisioning: false
+    allow_customfile: false
+    nginx_upstream: php
+    hosts:
+      - local.wordpress.test
+      
+
+  wordpress-develop:
+    repo: https://github.com/Varying-Vagrant-Vagrants/vvv-wordpress-develop.git
+    vm_dir: /srv/www/wordpress-develop
+    local_dir: /Users/janesmith/dev/www/vvv/www/wordpress-develop
+    branch: master
+    skip_provisioning: true
+    allow_customfile: false
+    nginx_upstream: php
+    hosts:
+      - develop.wordpress.test
+
+   //Point to new Domain
+   https://github.com/Varying-Vagrant-Vagrants/VVV/wiki/Add-New-Domain   
+//TUtorials
+http://tparser.org/Udemy
+https://getfreetutorial.com/complete-python-3-udemy/
+
+//Require Send Emails
+composer require guzzlehttp/guzzle
+->nullable()
+
+
+
+
+

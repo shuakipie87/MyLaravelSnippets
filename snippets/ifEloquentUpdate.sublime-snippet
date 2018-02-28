@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+
+    if(${1:dollarsign}user->has('roles')){
+      
+      foreach (${1:dollarsign}user->roles as ${1:dollarsign}role) {
+                       # code..
+           if(${1:dollarsign}role->name == 'Administrator'){
+
+            ${1:dollarsign}role->name = 'subscriber';
+             ${1:dollarsign}role->save();
+           }
+       }
+     }
+       ${0:}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>ifeloquentupdate</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

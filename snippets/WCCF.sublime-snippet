@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+[text* your-name class:form-control class:input-lg id:contact-name placeholder "Your Name"]
+[email* your-email class:form-control class:input-lg id:contact-email placeholder "Your Email"]
+[text* your-subject class:form-control class:input-lg id:contact-subject placeholder "Your Subject"]
+[textarea* your-message class:form-control clas:input-lg id:contact-message x3 placeholder "Your Message"]
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wccf</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

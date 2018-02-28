@@ -1,0 +1,77 @@
+<snippet>
+	<content><![CDATA[
+
+/*
+Template Name: Home Page
+*/
+
+get_header();
+
+${1:addsign}imagetop = get_field('imagetop');
+${1:addsign}beautiful_title = get_field('beautiful_title');
+${1:addsign}beautiful_body = get_field ('beautiful_body');
+${1:addsign}app_store = get_field ('app_store');
+${1:addsign}google_play = get_field ('google_play');
+${1:addsign}iphone_black = get_field ('iphone_black');
+${1:addsign}ss01 = get_field ('ss01');
+${1:addsign}ss02 = get_field ('ss02');
+${1:addsign}ss03 = get_field ('ss03');
+${1:addsign}ss04 = get_field ('ss04');
+${1:addsign}ss05 = get_field ('ss05');
+?>
+
+ <div class="col-12 text-center">
+                    <!-- If user uploaded an image -->
+					<?php if(!empty(${1:addsign}imagetop)): ?>
+					 <!--  Display Image on Advanced Custom Fields. -->
+				    <img src ="<?php echo ${1:addsign}imagetop['url']; ?>" alt ="<?php echo ${1:addsign}imagetop['alt'];?>">
+  					<?php endif;?>
+
+ </div>
+<!-- Display WordPress title -->
+ <h1><?php echo ${1:addsign}beautiful_title; ?></h1>
+<!-- Display WordPress body -->             
+ <p> <?php echo ${1:addsign}beautiful_body; ?></p>
+<!-- Display Image right away without the if statement required on advanced custom fields
+ <img src ="<?php echo ${1:addsign}google_play['url']; ?>" alt ="<?php echo ${1:addsign}google_play['alt'];?> ">  
+
+<!-- Display Post Queary on Using Adavancced Post and Custom Fields.
+  
+  <?php                   
+	     loop = new Wp_Query( 
+	        array(
+	           'post_type' => 'quick_features', 
+	           'orderby' => 'post_id', 
+	           'order' => 'ASC')); ?>
+                                                                                  
+        <?php while ${1:addsign}loop->have_posts() ): ${1:addsign}loop->the_post(); ?>
+             <div class="row features">
+            	 <div class="col-sm">
+                 	 <div class="feature">
+                             <h3><?php the_title(); ?></h3>
+                                <?php 
+                                  if ( has_post_thumbnail()){
+                     					the_post_thumbnail( array(238, 238));
+                                 	}                     
+                                 ?>
+                     
+                                <p><?php the_content(); ?></p>
+                                  <div class="btn btn-get"> GET NOW  </div>
+                     
+                    </div>
+               </div> <!-- end .col-sm
+           </div>  <!-- end .features -->                 
+                     
+ <?php endwhile; wp_reset_query();?>     
+<!-- Display WordPress Footer -->
+<?php get_footer(); ?>
+<!-- Display WordPress Sidebar --> 
+<?php get_sidebar(); ?>
+<!-- Display the dynamic sidebar -->
+<?php dynamic_sidebar('sidebar-2'); ?>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wcreatepage</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

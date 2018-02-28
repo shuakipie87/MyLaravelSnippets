@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+  // Eloquent Insert Data
+
+   Route::get('/basicinsert', function () {
+        	
+ 		 ${1:dollarsign}post = new Post;
+
+ 		 ${1:dollarsign}post->title = 'New ORM Title Eloquent';
+ 		 ${1:dollarsign}post->content = 'New Body Eloquent';
+
+ 		 ${1:dollarsign}post->save();	
+
+
+
+   });${0:}
+  
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>reloquentinsert</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

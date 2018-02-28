@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+ Route::get('/read', function () {
+      	
+      	${1:dollarsign}results = DB::select('select * from posts where id = ? ', [1]);
+
+      	foreach (${1:dollarsign}results as ${1:dollarsign}post) {
+      		     
+      		   return ${1:dollarsign}post->title;
+      	}	
+ });${0:}	
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>rread</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

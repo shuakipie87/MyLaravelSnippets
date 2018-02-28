@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+   			  ${1:dollarsign}video = Video::findorfail(1);
+
+   		     foreach ( ${1:dollarsign}video->tags as  ${1:dollarsign}tag) {
+
+         			  echo  ${1:dollarsign}tag;
+      		 }${0:}
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>ReadTaggable</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

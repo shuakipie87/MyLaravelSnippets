@@ -1,0 +1,25 @@
+Install Sage Theme
+
+//1st Run
+npm install -g gulp bower
+//2nd Run 
+git clone https://github.com/roots/sage.git theme-name
+composer create-project roots/sage Custom Sage dev-master
+chmod -R 777 newsagetheme
+ls -lrt
+//3rd run
+yarn
+//4th
+yarn run start
+
+
+//
+cd etc/apache2
+cd custom-sites
+ls
+sudo cp wordpress-default.conf customsage.conf
+vim customsage.conf
+
+//Point the new domain
+https://github.com/Varying-Vagrant-Vagrants/VVV/wiki/Add-New-Domain
+sudo a2dismod php5 && sudo a2enmod php5.6 && sudo service apache2 restart

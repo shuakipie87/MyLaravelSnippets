@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+
+//Display Custom Fields
+${1:custom_name}		= get_post_meta( 9, '${2:custom_name}', true);
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wdcf</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

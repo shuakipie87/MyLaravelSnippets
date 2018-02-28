@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+          	//Restore the Trash Eloquent
+
+              	 Route::get('/restore', function () {
+                     
+                 Post::withTrashed()->where('ís_admin', 0)->restore();
+                  
+                 });	
+                 
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>reloquentrestore</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>

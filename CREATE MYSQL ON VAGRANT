@@ -1,0 +1,11 @@
+//Create mysql Database and Users
+
+mysql -u root -p
+root password
+
+CREATE DATABASE newdatabase;
+CREATE user joem@localhost IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON newdatabase.* TO joem@localhost;
+FLUSH PRIVILEGES;
+brew install php56 --with-mysql
+sudo apt-get install php-mysql

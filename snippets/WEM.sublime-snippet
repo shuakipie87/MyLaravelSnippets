@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+
+function new_excerpt_more (${1:}more){
+			global ${2:}post;
+			return '... <a classs ="moretag" href ="' . get_premalink (${3:}post->ID) . '"> continue reading </a>
+
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>wem</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope> 
+</snippet>
